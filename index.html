@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Quiz Game</h1>
+      <!-- <li><a href="highscores.html">View Highscores</a></li> -->
+      <button class="start-button">Start Quiz</button>
+      <div class="question-container" class="hidden">
+        <p class="question-text"></p>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+      </div>
+      <div class="question-container" class="hidden">
+        <p class="question-text"></p>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+      </div>
+      <div class="question-container" class="hidden">
+        <p class="question-text"></p>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+      </div>
+      <div class="question-container" class="hidden">
+        <p class="question-text"></p>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+        <button class="answer-button"></button>
+      </div>
+      <div id="end-container" class="hidden">
+        <h2>Quiz Over!</h2>
+        <p>Your Score: <span id="final-score"></span></p>
+        <label for="initials">Enter Initials: </label>
+        <input type="text" id="initials" />
+        <button id="submit-score"><a href="highscores.html">Submit</a></button>
+      </div>
+      <div class="timer-count">90</div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
