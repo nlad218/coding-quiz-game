@@ -7,47 +7,44 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Quiz Game</h1>
-      <!-- <li><a href="highscores.html">View Highscores</a></li> -->
-      <button class="start-button">Start Quiz</button>
-      <div class="question-container" class="hidden">
-        <p class="question-text"></p>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-      </div>
-      <div class="question-container" class="hidden">
-        <p class="question-text"></p>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-      </div>
-      <div class="question-container" class="hidden">
-        <p class="question-text"></p>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-      </div>
-      <div class="question-container" class="hidden">
-        <p class="question-text"></p>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-        <button class="answer-button"></button>
-      </div>
-      <div id="end-container" class="hidden">
-        <h2>Quiz Over!</h2>
-        <p>Your Score: <span id="final-score"></span></p>
-        <label for="initials">Enter Initials: </label>
-        <input type="text" id="initials" />
-        <button id="submit-score"><a href="highscores.html">Submit</a></button>
-      </div>
+    <header>
+      <a href="highscores.html">View Highscores</a>
       <div class="timer-count">90</div>
+    </header>
+    <section>
+      <div id="start-screen">
+        <h1>Coding Quiz Game</h1>
+        <p>
+          Welcome to the Coding Game! The objective of this game is to answer as
+          many questions as you can correctly in the shortest amount of time.
+          Click "Start Quiz" once you're ready to begin!
+        </p>
+        <button class="start-button">Start Quiz</button>
+      </div>
+    </section>
+
+    <section>
+      <div hidden id="question-screen">
+        <p id="question">Question goes here:</p>
+        <ul>
+          <button id="option-0"></button>
+          <button id="option-1"></button>
+          <button id="option-2"></button>
+          <button id="option-3"></button>
+        </ul>
+        <h2 id="question-outcome"></h2>
+      </div>
+    </section>
+
+    <div id="end-container" class="hidden">
+      <h3>Quiz Over!</h3>
+      <p>Your Score: <span id="final-score"></span></p>
+      <label for="initials">Enter Initials: </label>
+      <input type="text" id="initials" />
+      <button id="submit-score"><a href="highscores.html">Submit</a></button>
     </div>
+
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/highscores.js"></script>
   </body>
 </html>
