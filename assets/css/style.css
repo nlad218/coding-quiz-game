@@ -3,6 +3,24 @@
   background-color: bisque;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.timer-count {
+  font-size: 24px;
+}
+
 #end-container {
   display: none;
 }

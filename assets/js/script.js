@@ -1,3 +1,4 @@
+//Selecting Elements from HTML
 const startButton = document.querySelector(".start-button");
 const startScreen = document.getElementById("start-screen");
 const questionScreen = document.getElementById("question-screen");
@@ -13,7 +14,7 @@ const submitScoreButton = document.getElementById("submit-score");
 let quizOver = false; // Variable to track quiz status
 let timer; // To store the timer interval
 
-// Define your questions and answers here
+// Questions and Answers
 const questions = [
   {
     question: "Question 1: What does HTML stand for?",
@@ -33,34 +34,21 @@ const questions = [
   },
   {
     question:
-      "Question 3: What symbol is used for single-line comments in most programming languages?",
-    options: ["#", "//", "/*", "%%"],
-    correctIndex: 1,
+      "Question 3: In JavaScript, what function is used to print something to the console?",
+    options: ["console.print()", "print()", "log()", "console.log()"],
+    correctIndex: 3,
   },
   {
     question:
-      "Question 4: In JavaScript, what function is used to print something to the console?",
-    options: ["console.print()", "print()", "console.log()", "log()"],
-    correctIndex: 2,
-  },
-  {
-    question:
-      "Question 5: What symbol is used for single-line comments in most programming languages?",
+      "Question 4: What symbol is used for single-line comments in most programming languages?",
     options: ["#", "//", "/*", "%%"],
     correctIndex: 1,
   },
-  {
-    question:
-      "Question 6: What symbol is used for single-line comments in most programming languages?",
-    options: ["#", "//", "/*", "%%"],
-    correctIndex: 1,
-  },
-  // Add more questions and answers as needed
 ];
 
 let currentQuestionIndex = 0;
 let score = 0;
-let timeLeft = 90; // Initial time in seconds
+let timeLeft = 60; // Initial time in seconds
 
 function startQuiz() {
   startScreen.style.display = "none";
@@ -74,15 +62,24 @@ function showQuestion(index) {
     const currentQuestion = questions[index];
     questionText.textContent = currentQuestion.question;
 
-    currentQuestion.options.forEach((option, i) => {
-      optionButtons[i].textContent = option;
-      optionButtons[i].addEventListener("click", () => {
-        checkAnswer(i, currentQuestion.correctIndex);
-      });
+    // Remove previous event listeners
+    optionButtons.forEach((button) => {
+      button.removeEventListener("click", optionClickHandler);
+    });
+
+    // Add event listener to all option buttons
+    optionButtons.forEach((button, i) => {
+      button.textContent = currentQuestion.options[i];
+      button.addEventListener("click", optionClickHandler);
     });
   } else {
     endQuiz();
   }
+}
+
+function optionClickHandler(event) {
+  const clickedOptionIndex = Array.from(optionButtons).indexOf(event.target);
+  checkAnswer(clickedOptionIndex, questions[currentQuestionIndex].correctIndex);
 }
 
 function checkAnswer(selectedIndex, correctIndex) {
@@ -120,14 +117,14 @@ function endQuiz() {
   quizOver = true;
   questionScreen.style.display = "none";
   endContainer.style.display = "block";
-  finalScoreSpan.textContent = score;
+  finalScoreSpan.textContent = timeLeft;
 }
 
 submitScoreButton.addEventListener("click", () => {
   const initials = initialsInput.value.trim();
   if (initials !== "") {
     const highscores = JSON.parse(localStorage.getItem("highscores")) || [];
-    highscores.push({ initials, score });
+    highscores.push({ initials, timeLeft });
     localStorage.setItem("highscores", JSON.stringify(highscores));
   }
 });
