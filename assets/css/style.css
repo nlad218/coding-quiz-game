@@ -24,3 +24,8 @@ a {
 #end-container {
   display: none;
 }
+
+#highscores-list {
+  list-style: none;
+  padding: 0;
+}

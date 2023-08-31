@@ -14,7 +14,7 @@ const submitScoreButton = document.getElementById("submit-score");
 let quizOver = false; // Variable to track quiz status
 let timer; // To store the timer interval
 
-// Questions and Answers
+//Questions and Answers
 const questions = [
   {
     question: "Question 1: What does HTML stand for?",
@@ -50,6 +50,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let timeLeft = 60; // Initial time in seconds
 
+//Functions
 function startQuiz() {
   startScreen.style.display = "none";
   questionScreen.style.display = "block";
@@ -120,6 +121,7 @@ function endQuiz() {
   finalScoreSpan.textContent = timeLeft;
 }
 
+//Event Listeners
 submitScoreButton.addEventListener("click", () => {
   const initials = initialsInput.value.trim();
   if (initials !== "") {
