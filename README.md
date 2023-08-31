@@ -18,7 +18,7 @@ N/A
 
 ## Screenshot of site
 
-(![Running Site](<assets/Screenshot 2023-08-31 at 5.16.57 PM (2).png>))
+![Running Site](<assets/Screenshot 2023-08-31 at 5.16.57 PM (2).png>)
 
 ## Link to Deployed App
 
